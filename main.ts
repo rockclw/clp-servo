@@ -8,9 +8,17 @@ load dependency
 //% color="#31C7D5" weight=10 icon="\uf1d0"
 namespace clpRobotArmServo{
     export enum Servos{
-        baseServo = robotbit.Servos.S1,
-        clawTurnServo = robotbit.Servos.S2,
-        clawServo = robotbit.Servos.S3
+        baseServo,
+        clawTurnServo,
+        clawServo
+    }
+
+    function toServo(servo: Servos): robotbit.Servos{
+        switch (servo){
+            case Servos.baseServo: return robotbit.Servos.S1;
+            case Servos.clawTurnServo: return robotbit.Servos.S2;
+            default: return robotbit.Servos.S3;
+        }
     }
     
     export enum direction{
@@ -28,8 +36,8 @@ namespace clpRobotArmServo{
         }
     }
     
-    var ServoAngle:number[] = [0,0,0];
-    var ServoMaxAngle:number[] = [145,180,80];
+    let ServoAngle:number[] = [0,0,0];
+    let ServoMaxAngle:number[] = [145,180,80];
     
     function setDir(dir: direction): number{
         if (dir == direction.clockwise){
@@ -55,7 +63,7 @@ namespace clpRobotArmServo{
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=3
     export function turn(servo: Servos, degree: number, dir: direction): void {
         ServoAngle[ServoAngle[toIndex(servo)]] = getFinalAngle(servo, degree, dir);
-        robotbit.Servo(servo, ServoAngle[servo]);
+        robotbit.Servo(toServo(servo), ServoAngle[servo]);
     }
     
     //% blockId=servo_showangle block="Servo|%servo| show angle"
