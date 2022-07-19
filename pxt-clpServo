@@ -1,0 +1,22 @@
+{
+    "name": "clpServo",
+    "version": "0.0.1",
+    "description": "Extension for CLP Steam Project(Robot Arm). Based on robotbit extension",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*",
+        "neopixel": "github:kittenbothk/pxt-robotbit",
+    },
+    "files": [
+        "README.md",
+        "main.ts",
+        "_locales/zh-cn/robotbit-strings.json",
+        "_locales/zh-tw/robotbit-strings.json"
+    ],
+    "testFiles": [
+    ],
+    "public": false,
+    "preferredEditor": "tsprj"
+}
+Footer
+© 2022 GitH
