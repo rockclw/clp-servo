@@ -58,7 +58,7 @@ namespace clpRobotArmServo{
         return deg;
     }
     
-    //% blockId=servo_turn block="Servo|%servo| turn %dir by %degree degree"
+    //% blockId=servo_turn block="Servo|%servo| turn |%dir| by |%degree| degree"
     //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=3
     export function turn(servo: Servos, degree: number, dir: direction): void {
