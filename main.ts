@@ -1,16 +1,8 @@
-/*
-Riven
-modified from robotbit
-load dependency
-"clpServo": "file:../pxt-clpServo"
-*/
-
-//% color="#31C7D5" weight=10 icon="\uf1d0"
 namespace clpRobotArmServo{
     export enum Servos{
-        baseServo,
-        clawTurnServo,
-        clawServo
+        baseServo  = 0,
+        clawTurnServo = 1,
+        clawServo = 2
     }
 
     function toServo(servo: Servos): robotbit.Servos{
@@ -26,16 +18,6 @@ namespace clpRobotArmServo{
         clockwise = 1
     }
     
-    function toIndex(servo: Servos): number{
-        switch(servo){
-        
-            case Servos.baseServo: return 0;
-            case Servos.clawTurnServo: return 1;
-            case Servos.clawServo: return 2;
-            default: return 3;
-        }
-    }
-    
     let ServoAngle:number[] = [0,0,0];
     let ServoMaxAngle:number[] = [145,180,80];
     
@@ -48,7 +30,7 @@ namespace clpRobotArmServo{
     
     function getFinalAngle(servo: Servos, degree: number, dir: direction): number{
     
-        let deg = ServoAngle[toIndex(servo)] +  degree * setDir(dir);
+        let deg = ServoAngle[servo] +  degree * setDir(dir);
         if (deg > ServoMaxAngle[servo]){
             return ServoMaxAngle[servo];
         }
@@ -62,19 +44,19 @@ namespace clpRobotArmServo{
     //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=3
     export function turn(servo: Servos, dir: direction, degree: number): void {
-        ServoAngle[ServoAngle[toIndex(servo)]] = getFinalAngle(servo, degree, dir);
+        ServoAngle[servo] = getFinalAngle(servo, degree, dir);
         robotbit.Servo(toServo(servo), ServoAngle[servo]);
     }
     
     //% blockId=servo_showangle block="Servo|%servo| show angle"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=3
     export function showAngle(servo: Servos): void{
-        basic.showNumber(ServoAngle[toIndex(servo)]);
+        basic.showNumber(ServoAngle[servo]);
     }
     
     //% blockId=servo_getangle block="angle of Servo|%servo|"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=3
     export function getAngle(servo: Servos): number{
-        return ServoAngle[toIndex(servo)];
+        return ServoAngle[servo];
     }
 }
