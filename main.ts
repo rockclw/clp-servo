@@ -1,3 +1,4 @@
+//% color="16058F" icon="\uf0ad"
 namespace clpRobotArmServo{
     export enum Servos{
         baseServo  = 0,
