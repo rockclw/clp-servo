@@ -1,3 +1,4 @@
+
 //% color="16058F" icon="\uf0ad"
 namespace clpRobot{
     
@@ -77,8 +78,8 @@ namespace clpRobot{
     
     function GetIndex(servo: Servos): number{
         switch(servo){
-            case baseServo: return 0;
-            case clawTurnServo: return 1;
+            case Servos.baseServo: return 0;
+            case Servos.clawTurnServo: return 1;
             default: return 2;
         }
     }
