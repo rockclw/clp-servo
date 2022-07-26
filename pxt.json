@@ -1,6 +1,6 @@
 {
-    "name": "clp-extension",
-    "description": "",
+    "name": "CLP Robot Extension",
+    "description": "It is an extension for CLP project. Based on robotbit extension.",
     "dependencies": {
         "core": "*"
     },
