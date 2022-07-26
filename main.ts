@@ -1,6 +1,6 @@
 
 //% color="16058F" icon="\uf0ad"
-namespace clpRobot{
+namespace CLPRobot{
     
     const PCA9685_ADDRESS = 0x40
     const MODE1 = 0x00
