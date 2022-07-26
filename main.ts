@@ -20,7 +20,7 @@ namespace clpRobot{
     
     let ServoAngle:number[] = [0,0,0];
     let ServoMaxAngle:number[] = [145,180,80];
-    let initialized = false;
+    let initialized = false
     
     function i2cwrite(addr: number, reg: number, value: number) {
         let buf = pins.createBuffer(2)
@@ -121,7 +121,7 @@ namespace clpRobot{
     export function turn(servo: Servos, dir: direction, degree: number): void {
         let index = GetIndex(servo);
         ServoAngle[index] = getFinalAngle(servo, degree, dir);
-        servoMove(servo, ServoAngle[servo]);
+        servoMove(servo, ServoAngle[index]);
     }
     
     //% blockId=servo_showangle block="Servo|%servo| show angle"
