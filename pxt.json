@@ -2,8 +2,7 @@
     "name": "clp-extension",
     "description": "",
     "dependencies": {
-        "core": "*",
-        "robotbit": "github:kittenbot/pxt-robotbit"
+        "core": "*"
     },
     "files": [
         "main.blocks",
