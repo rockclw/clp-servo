@@ -1,9 +1,8 @@
 {
-    "name": "clp-extension",
+    "name": "clp-servo",
     "description": "",
     "dependencies": {
         "core": "*",
-        "robotbit": "github:kittenbot/pxt-robotbit"
     },
     "files": [
         "main.blocks",
