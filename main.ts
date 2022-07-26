@@ -77,10 +77,10 @@ namespace clpRobot{
     }
     
     function GetIndex(servo: Servos): number{
-        switch(servo){
-            case Servos.baseServo: return 0;
-            case Servos.clawTurnServo: return 1;
-            default: return 2;
+        switch (servo){
+            case Servos.baseServo : return 0;
+            case Servos.clawTurnServo : return 1;
+            default : return 2;
         }
     }
     
@@ -92,10 +92,10 @@ namespace clpRobot{
     }
     
     function getFinalAngle(servo: Servos, degree: number, dir: direction): number{
-        let index = GetIndex(servo);
-        let deg = ServoAngle[servo] +  degree * setDir(dir);
-        if (deg > ServoMaxAngle[servo]){
-            return ServoMaxAngle[servo];
+        let index = GetIndex(servo)
+        let deg = ServoAngle[index] +  degree * setDir(dir);
+        if (deg > ServoMaxAngle[index]){
+            return ServoMaxAngle[index];
         }
         else if (deg < 0){
             return 0;
@@ -119,7 +119,7 @@ namespace clpRobot{
     //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=3
     export function turn(servo: Servos, dir: direction, degree: number): void {
-        let index = GetIndex(servo);
+        let index = GetIndex(servo)
         ServoAngle[index] = getFinalAngle(servo, degree, dir);
         servoMove(servo, ServoAngle[index]);
     }
@@ -127,7 +127,7 @@ namespace clpRobot{
     //% blockId=servo_showangle block="Servo|%servo| show angle"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=3
     export function showAngle(servo: Servos): void{
-        let index = GetIndex(servo);
+        let index = GetIndex(servo)
         basic.showNumber(ServoAngle[index]);
     }
     
