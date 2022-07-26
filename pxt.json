@@ -1,8 +1,8 @@
 {
-    "name": "clp-servo",
+    "name": "clp-extension",
     "description": "",
     "dependencies": {
-        "core": "*",
+        "core": "*"
     },
     "files": [
         "main.blocks",
