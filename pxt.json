@@ -1,11 +1,11 @@
 {
     "name": "CLP Robot Extension",
     "description": "It is an extension for CLP project. Based on robotbit extension.",
+    "version":"0.1.1"
     "dependencies": {
         "core": "*"
     },
     "files": [
-        "main.blocks",
         "main.ts",
         "README.md"
     ],
