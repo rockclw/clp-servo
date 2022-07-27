@@ -56,8 +56,8 @@ There are in total three servo.
 The unit are degree. 0 specify the lowest position of the servo.
 所用的單位是角度。 0度為該陀機最低可到達的位置。
 
-baseServo : 0 - 145
-clawTurnServo : 0 - 180
-clawServo : 0 - 80
+baseServo : 0 - 145 \
+clawTurnServo : 0 - 180 \
+clawServo : 0 - 80 
 
 
