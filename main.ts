@@ -115,6 +115,12 @@ namespace CLPRobot{
     
     }
     
+    function servoRun(servo: Servos, degree: number): void{
+        let index = GetIndex(servo)
+        ServoAngle[index] = degree;
+        servoMove(servo, ServoAngle[index]);
+    }
+    
     //% blockId=servo_turn block="Servo|%servo| turn |%dir by |%degree degree"
     //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=3
@@ -124,11 +130,20 @@ namespace CLPRobot{
         servoMove(servo, ServoAngle[index]);
     }
     
+    //% blockId=servo_backtoInitial block="Servo|%servo| to lowest position"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=3
+    export function toInitial(servo: Servos): void{
+        let index = GetIndex(servo)
+        ServoAngle[index] = 0;
+        servoMove(servo, ServoAngle[index]);
+    }
     //% blockId=servo_showangle block="Servo|%servo| show angle"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=3
     export function showAngle(servo: Servos): void{
         let index = GetIndex(servo)
         basic.showNumber(ServoAngle[index]);
+        basic.pause(3000);
+        basic.clearScreen();
     }
     
     //% blockId=servo_getangle block="angle of Servo|%servo|"
