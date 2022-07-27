@@ -3,7 +3,8 @@
     "version": "0.1.1",
     "description": "It is an extension for CLP project. Based on robotbit extension.",
     "dependencies": {
-        "core": "*"
+        "core": "*",
+        "bitplayer": "github:mirochao/pxt-BitPlayer"
     },
     "files": [
         "main.ts",
