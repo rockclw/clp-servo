@@ -6,7 +6,7 @@ Will also import bitPlayer.
 
 Visit its github project: https://github.com/KittenBot/pxt-robotbit
 
-## Blocks 方塊##
+## Blocks 方塊 ##
 
 ### turn 轉動 ###
 
