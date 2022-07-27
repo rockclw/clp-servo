@@ -1,5 +1,5 @@
 
-//% color="16058F" icon="\uf0ad"
+//% color="#16058F" icon="\uf0ad"
 namespace CLPRobot{
     
     const PCA9685_ADDRESS = 0x40
