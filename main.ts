@@ -18,6 +18,7 @@ namespace ClpRobot{
         clockwise = 1
     }
     
+    
     let ServoAngle:number[] = [0,0,0];
     let ServoMaxAngle:number[] = [145,180,80];
     let initialized = false
@@ -151,5 +152,18 @@ namespace ClpRobot{
     export function getAngle(servo: Servos): number{
         let index = GetIndex(servo);
         return ServoAngle[index];
+    }
+    
+    //% blockId=servo_adjustZero block="adjust zero angle of Servo|%servo|"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=3
+    export function adjustZero(servo: Servos): void{
+        let index = GetIndex(servo);
+        ServoAngle[index] = 0;
+    }
+    
+    //% blockId=servo_move_auto block="Servo|%servo| move |%dir"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=3
+    export function servoMoveAuto(servo: Servos, dir: direction): void{
+        turn(servo, dir, 2);
     }
 }
