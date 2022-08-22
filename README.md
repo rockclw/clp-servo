@@ -41,6 +41,23 @@ Get the current angle of selected servo to its lowest position.
 Return should be a positve integer.
 所獲得的數據應爲一個正整數。
 
+### servoMoveAuto 陀機自動移動 ###
+
+#### Format: Servo [Servo] move [direction] ####
+#### 格式： 陀機 [陀機] 往 [方向] 轉 ####
+
+Turn the servo to specific direction.
+讓陀機往特意方向移動。
+
+### adjustZero 歸零 ###
+
+#### Format: adjust zero angle of servo [Servo]
+#### 格式: 陀機 [陀機] 歸零
+
+define zero degree of servo.
+定義陀機的零度。
+
+
 ## Datas 數據 ##
 ### Name of servo 陀機名稱 ###
 
